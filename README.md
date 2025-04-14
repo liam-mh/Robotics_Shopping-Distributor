@@ -119,3 +119,7 @@ __Handling__: Implicitly handled by the final `else` condition in the temperatur
 __Expected Behavior__: The `ai_vision.take_snapshot()` function might raise an exception or return an unexpected value. The program should ideally handle this gracefully, perhaps by displaying an error message on the brain's screen and stopping the main loop.\
 __Actual Behavior__: The current code doesn't have explicit error handling for potential issues with the `ai_vision.take_snapshot()` function. An exception might crash the program.\
 __Handling__: Not currently handled. Error handling (e.g., using `try-except` blocks) could be added around the `ai_vision.take_snapshot()` call to make the system more robust.
+
+## Resources Used
+- [VEX EXP documentation for pyhton](https://api.vex.com/exp/home/python/index.html)
+- [Vision AI pyhton documentation](https://api.vex.com/exp/home/python/Vision/index.html)
