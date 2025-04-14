@@ -93,4 +93,29 @@ In addition to this, the size design of the scanning platform is planned to be a
 #### Paddle Rotation Location
 Due to the inherent slight give in the paddles, even when turned to specific angles, pucks could sometimes pass and not enter the correct storage area. Additionally, the paddle's return to the exact same spot wasn't always consistent, potentially creating an offset over time. To rectify these errors, we implemented a slight overturn in the motor's codebase to ensure firm contact, and we added physical stoppers (screws and storage area side barriers) to ensure consistent paddle positioning.
 
-### Edge Cases
+## Edge Cases
+
+### 1 - No item is presented to the AI Vision sensor.
+__Expected Behavior__: The `ai_cam()` function should return `None`, and the main loop should continue to wait for a valid scan without errors.\
+__Actual Behavior__: The `ai_cam()` function takes a snapshot and if `len(ai_objects)` is 0, it returns `None`. The main loop proceeds, `scan_id` remains `None`, and the robot does nothing until an item is presented.\
+__Handling__: Implicitly handled by the `while True` loop, which continues to call `ai_cam()` until a valid ID is returned.
+
+### 2 - An item with an unrecognized ID (not in the `items` list) is scanned.
+__Expected Behavior__: The `get_item_from_id()` function should return `None`. The main loop should enter the `else` block, print "Unrecognised item" to the screen, play the power down sound, and wait for 2 seconds.\
+__Actual Behavior__: This matches the expected behavior as implemented in the `else` block after the `if matched_item:` condition.\
+__Handling__: Explicitly handled by the code that checks if `matched_item` is `None`.
+
+### 3 - The "Checkout" tag (ID 29) is scanned before any other items.
+__Expected Behavior__: The `if scan_id is 29:` condition should be met. The robot should play the tada sound, stop the belt, call `print_shop()` (which will print a total of 0), wait for 5 seconds, and then break out of the `while` loop, ending the program.\
+__Actual Behavior__: This matches the expected behavior based on the code.\
+__Handling__: Explicitly handled by the `if scan_id is 29:` block.
+
+### 4 - An item is scanned, and its `temp` property in the `items` list is neither "fridge" nor "frozen".
+__Expected Behavior__: The code should enter the `else` block after the `elif matched_item["temp"] == "frozen":` condition, and it will `wait(3000, MSEC)`. This assumes that any temperature not "fridge" or "frozen" should go to the dry store.\
+__Actual Behavior__: The robot will wait for 3 seconds without activating any paddle, effectively sending the item towards the dry store area.\
+__Handling__: Implicitly handled by the final `else` condition in the temperature sorting logic.
+
+### 5 - The AI Vision sensor malfunctions or is disconnected during operation.
+__Expected Behavior__: The `ai_vision.take_snapshot()` function might raise an exception or return an unexpected value. The program should ideally handle this gracefully, perhaps by displaying an error message on the brain's screen and stopping the main loop.\
+__Actual Behavior__: The current code doesn't have explicit error handling for potential issues with the `ai_vision.take_snapshot()` function. An exception might crash the program.\
+__Handling__: Not currently handled. Error handling (e.g., using `try-except` blocks) could be added around the `ai_vision.take_snapshot()` call to make the system more robust.
