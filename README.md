@@ -24,12 +24,13 @@ Central connection point to run codebase, connect to hardware and display text.
 - Smart Cable (5x)
 
 #### Drive Chain
-Move an item down the conveyor belt.
+Move an item down the conveyor belt.\
 _Chain Link_
 - V5 Smart Motor (5.5W)
 - Chain Links
 - 8” Shaft (2x)
 - 16T Sprocket, 6P (2x)
+
 _Conveyor Belt_
 - Tank Treads
 - Tank tread drive/idler wheels (3x)
