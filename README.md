@@ -62,6 +62,8 @@ Scans AI Vision Sensor [AprilTags](https://content.vexrobotics.com/docs/AprilTag
 
 #### 3D Printed Pucks (9x)
 Representations of food items, with an april tag stuck on top.
+- 3cm width
+- 1.5cm height
 
 ### Control Systems
 #### Item Scanning and Identification 
