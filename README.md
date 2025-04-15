@@ -123,6 +123,11 @@ __Expected Behavior__: The `ai_vision.take_snapshot()` function might raise an e
 __Actual Behavior__: The current code doesn't have explicit error handling for potential issues with the `ai_vision.take_snapshot()` function. An exception might crash the program.\
 __Handling__: Not currently handled. Error handling (e.g., using `try-except` blocks) could be added around the `ai_vision.take_snapshot()` call to make the system more robust.
 
+## Demonstration
+A video to showcase the robot functioning.
+
+[![Robot Shopping-Distributor demonstration video](https://img.youtube.com/vi/QoAtYfwUIMM/0.jpg)](https://youtu.be/QoAtYfwUIMM)
+
 ## Resources Used
 - [VEX EXP documentation for pyhton](https://api.vex.com/exp/home/python/index.html)
 - [Vision AI pyhton documentation](https://api.vex.com/exp/home/python/Vision/index.html)
