@@ -126,7 +126,7 @@ __Handling__: Not currently handled. Error handling (e.g., using `try-except` bl
 ## How To Build And Use
 ### Prerequisites
 - The built VEX EXP robot. (1)
-- The EXP Robot Brain, with a charched battery attatched and placed on the mount at the start of the conveyor belt. (2)
+- The EXP Robot Brain, with a charged battery attatched and placed on the mount at the start of the conveyor belt. (2)
 - All five Smart Cables, plugged into the top five ports of the EXP Robot Brain, in order of port mapping. (3)
 - The AI Vision Camera plugged into a power supply. (4)
 - A laptop connected to the EXP Robot Brain via a USB-C cable. (5)
