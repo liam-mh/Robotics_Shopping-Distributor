@@ -123,6 +123,47 @@ __Expected Behavior__: The `ai_vision.take_snapshot()` function might raise an e
 __Actual Behavior__: The current code doesn't have explicit error handling for potential issues with the `ai_vision.take_snapshot()` function. An exception might crash the program.\
 __Handling__: Not currently handled. Error handling (e.g., using `try-except` blocks) could be added around the `ai_vision.take_snapshot()` call to make the system more robust.
 
+## How To Build And Use
+### Prerequisites
+- The built VEX EXP robot. (1)
+- The EXP Robot Brain, with a charched battery attatched and placed on the mount at the start of the conveyor belt. (2)
+- All five Smart Cables, plugged into the top five ports of the EXP Robot Brain, in order of port mapping. (3)
+- The AI Vision Camera plugged into a power supply. (4)
+- A laptop connected to the EXP Robot Brain via a USB-C cable. (5)
+
+![prerequisites image 1](./images/prerequisite-1.png)
+![prerequisites image 2](./images/prerequisite-2.png)
+
+### Downloading The Codebase
+There are two paths to opening the EXP Python code, before applying it to the EXP Robot Brain.
+
+#### A) Copy Code
+1. Open the [VEX EXP IDE](https://codeexp.vex.com/).
+2. Click on 'File' > 'New Text Project' > 'Python' > 'EXP Brain'.
+3. Clear the current template code.
+4. Copy all code from [main.py](main.py) in this Git Repository.
+5. Paste code in the IDE.
+
+#### B) Open File
+1. Download the [Robotics_ShoppingDistributor.exppython](Robotics_ShoppingDistributor.exppython) file in this Git Repository.
+2. Open the [VEX EXP IDE](https://codeexp.vex.com/).
+3. Click on 'File' > 'Open'.
+4. Select the 'Robotics_ShoppingDistributor.exppython' file from your computer. Press 'open'.
+
+Now the code base is in the IDE, we can download it onto the EXP Robot Brain:
+
+1. Click on 'BRAIN' button, and press 'Connect' 
+2. Select the serial port connected to the EXP Robot Brain. 
+3. Click on the 'DOWNLOAD' button.
+
+### Running The Shopping Distributor
+The codebase should now be installed on the EXP Robot Brain, and all motors, and the camera, should be powered. To begin using the robot, press the 'RUN' button in the VEX EXP IDE, or hover over 'Run' option on the EXP Robot Brain, and press the 'tick' button.
+
+The conveyor belt should now be moving, and the robot is waiting for the first puck to be placed on the scanning platform.
+
+For further clarification and a visual representation of the setup process (excluding file download), please see the demonstration below.
+
+
 ## Demonstration
 A video to showcase the robot functioning.
 
